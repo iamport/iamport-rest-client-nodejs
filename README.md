@@ -15,7 +15,7 @@
 
 ## Installation
 ```
-$ npm install iamport
+$ npm install git+https://git@github.com/iamport/iamport-rest-client-nodejs.git
 ```
 
 ## Usage
@@ -45,6 +45,7 @@ iamport.cancelPayment('impUid-for-cancel')
 
 ## Todo
 - 테스트 코드(...)
+- publish to NPM
 - 파라미터 검증
 - 결제 취소의 다양한 케이스 대응
 - merchantUid로 결제 정보 조회 구현
