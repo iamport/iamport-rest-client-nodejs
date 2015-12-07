@@ -7,7 +7,7 @@
 - 인증 토큰 반환
 - 결제 정보 반환
 - 결제 취소
-- 모든 함수는 [Promise](http://www.html5rocks.com/ko/tutorials/es6/promises/) 사용
+- 모든 함수는 [Promise](http://www.html5rocks.com/ko/tutorials/es6/promises/)를 반환
 
 ## Requirements
 - [nodejs](https://github.com/nodejs/node) >= 0.12.x
@@ -53,7 +53,7 @@ iamport.cancelPayment('impUid-for-cancel')
 
 ## Contribution
 - 이 프로젝트는 누구나 참여 가능합니다.
-- 버그나 개선점 및 의견 등은 [이슈](https://github.com/iamport/iamport-rest-client-nodejs/issues)를 활용 해 주시고 직접 [Pull Request](https://github.com/iamport/iamport-rest-client-nodejs/compare)를 하셔도 됩니다. 
+- 버그나 개선점 및 의견 등은 [이슈](https://github.com/iamport/iamport-rest-client-nodejs/issues) 및 [Pull Request](https://github.com/iamport/iamport-rest-client-nodejs/compare)를 활용해주세요. 
 
 ## Links
 - I'amport; 공식 사이트: http://www.iamport.kr/
@@ -61,5 +61,5 @@ iamport.cancelPayment('impUid-for-cancel')
 - I'amport; 메뉴얼: http://www.iamport.kr/manual/
 
 ## License
-- (MIT)[https://github.com/iamport/iamport-rest-client-nodejs/blob/master/LICENSE]
+- [MIT](https://github.com/iamport/iamport-rest-client-nodejs/blob/master/LICENSE)
 
