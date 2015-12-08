@@ -23,6 +23,8 @@ module.exports = Iamport;
  * @constructor
  */
 function Iamport(options) {
+  options || (options = {});
+
   this._host = 'https://api.iamport.kr';
   this.impKey = options.impKey || 'imp_apikey';
   this.impSecret = options.impSecret ||
@@ -37,15 +39,15 @@ function Iamport(options) {
  * @private
  */
 Iamport.prototype._getToken = function() {
-  var self = this;
+  var _this = this;
 
   var body = {
-    imp_key: self.impKey,
-    imp_secret: self.impSecret
+    imp_key: _this.impKey,
+    imp_secret: _this.impSecret
   };
 
   return rp({
-    url: self._host + '/users/getToken',
+    url: _this._host + '/users/getToken',
     method: 'POST',
     json: true,
     body: body
@@ -53,6 +55,7 @@ Iamport.prototype._getToken = function() {
     if (!response.response) {
       throw new Error(response.message);
     }
+
     return response.response.access_token;
   });
 };
@@ -65,12 +68,12 @@ Iamport.prototype._getToken = function() {
  * @public
  */
 Iamport.prototype.getPaymentByImpUid = function(impUid) {
-  var self = this;
+  var _this = this;
 
-  return self._getToken()
+  return _this._getToken()
     .then(function(token) {
       return rp({
-        url: self._host + '/payments/' + impUid + '?_token=' + token,
+        url: _this._host + '/payments/' + impUid + '?_token=' + token,
         method: 'GET',
         json: true
       });
@@ -78,6 +81,7 @@ Iamport.prototype.getPaymentByImpUid = function(impUid) {
       if (!response.response) {
         throw new Error(response.message);
       }
+
       return response.response;
     });
 };
@@ -122,9 +126,9 @@ Iamport.prototype.getPaymentsByStatus = function(status, page) {
  * @public
  */
 Iamport.prototype.cancelPayment = function(impUid, refundInfo) {
-  var self = this;
+  var _this = this;
 
-  refundInfo = refundInfo || {};
+  refundInfo || (refundInfo = {});
 
   var body = {
     imp_uid: impUid
@@ -136,10 +140,10 @@ Iamport.prototype.cancelPayment = function(impUid, refundInfo) {
     body.refund_account = bankInfo.refundAccount;
   }
 
-  return self._getToken()
+  return _this._getToken()
     .then(function(token) {
       return rp({
-        url: self._host + '/payments/cancel?_token=' + token,
+        url: _this._host + '/payments/cancel?_token=' + token,
         method: 'POST',
         json: true,
         body: body
@@ -148,6 +152,7 @@ Iamport.prototype.cancelPayment = function(impUid, refundInfo) {
       if (!response.response) {
         throw new Error(response.message);
       }
+
       return response.response;
     });
 };
