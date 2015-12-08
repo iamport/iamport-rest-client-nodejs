@@ -55,6 +55,10 @@ iamport.cancelPayment('impUid-for-cancel')
 - 이 프로젝트는 누구나 참여 가능합니다.
 - 버그나 개선점 및 의견 등은 [이슈](https://github.com/iamport/iamport-rest-client-nodejs/issues) 및 [Pull Request](https://github.com/iamport/iamport-rest-client-nodejs/compare)를 활용해주세요. 
 
+## Conventions
+- [ES5](https://github.com/airbnb/javascript/tree/master/es5)
+- [ES6](https://github.com/airbnb/javascript)
+
 ## Links
 - I'amport; 공식 사이트: http://www.iamport.kr/
 - I'amport; API(swagger): https://api.iamport.kr/
