@@ -2,7 +2,7 @@
   "name": "iamport",
   "version": "0.1.0",
   "description": "REST API client for I'amport;",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,5 +27,14 @@
   "homepage": "http://iamport.kr/",
   "dependencies": {
     "request-promise": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^2.1.1",
+    "eslint-plugin-babel": "^3.0.0",
+    "eslint-plugin-react": "^3.12.0"
   }
 }
