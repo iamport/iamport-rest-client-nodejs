@@ -24,7 +24,7 @@ class Iamport {
    */
   _getToken() {
     return API.post({
-      url: `users/getToken`,
+      path: 'users/getToken',
       body: {
         imp_key: this.impKey,
         imp_secret: this.impSecret,
@@ -42,7 +42,7 @@ class Iamport {
   getPaymentByImpUid(impUid) {
     return this._getToken()
       .then((token) => (API.get({
-        url: `payments/${impUid}`,
+        path: `payments/${impUid}`,
         query: {
           _token: token,
         },

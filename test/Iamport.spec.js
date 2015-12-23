@@ -1,9 +1,11 @@
 import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 
 import Iamport from '../src/Iamport';
 import { TEST_IMP_KEY, TEST_IMP_SECRET } from '../src/constants';
 
 chai.should();
+chai.use(chaiAsPromised);
 
 describe('Iamport', () =>  {
   describe('constructor', () => {
@@ -19,6 +21,15 @@ describe('Iamport', () =>  {
 
       iamport.impKey.should.equal('key');
       iamport.impSecret.should.equal('secret');
+    });
+  });
+
+  describe('methods', () => {
+    describe('getToken', () => {
+      it('gets access token from server', () => {
+        const iamport = new Iamport();
+        iamport._getToken().should.eventually.be.a('string');
+      });
     });
   });
 });

@@ -1,8 +1,9 @@
-import path from 'path';
+import { format as urlFormat } from 'url';
+import Promise from 'bluebird';
 
 import rp from 'request-promise';
 
-import { API_HOST } from './constants';
+import { SERVER } from './constants';
 
 const getValidResponse = (response) => {
   if (!response.response) {
@@ -12,9 +13,13 @@ const getValidResponse = (response) => {
   }
 };
 
-const request = ({ apiPath, method, body, query }) => {
+const request = ({ path, method, body, query }) => {
   return rp({
-    url: path.join(API_HOST, apiPath),
+    url: urlFormat({
+      protocol: SERVER.PROTOCOL,
+      host: SERVER.HOST,
+      pathname: path,
+    }),
     method,
     body,
     qs: query,
@@ -22,19 +27,21 @@ const request = ({ apiPath, method, body, query }) => {
   });
 };
 
-export const get = ({ apiPath, query }) => {
+const get = ({ path, query }) => {
   return request({
-    apiPath,
+    path,
     method: 'GET',
     query,
   }).then(getValidResponse);
 };
 
-export const post = ({ apiPath, query, body }) => {
+const post = ({ path, query, body }) => {
   return request({
-    apiPath,
+    path,
     method: 'POST',
     body,
     query,
   }).then(getValidResponse);
 };
+
+export default { get, post };
