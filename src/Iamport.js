@@ -10,9 +10,9 @@ class Iamport {
    * @property {string} impSecret REST API Secret Key (default: 아임포트 테스트 시크릿 키)
    * @constructor
    */
-  constructor({ impKey, impSecret }) {
-    this.impKey = impKey || TEST_IMP_KEY;
-    this.impSecret = impSecret || TEST_IMP_SECRET;
+  constructor(options = {}) {
+    this.impKey = options.impKey || TEST_IMP_KEY;
+    this.impSecret = options.impSecret || TEST_IMP_SECRET;
   }
 
   /**
