@@ -1,3 +1,5 @@
+import path from 'path';
+
 import rp from 'request-promise';
 
 import { API_HOST } from './constants';
@@ -10,9 +12,9 @@ const getValidResponse = (response) => {
   }
 };
 
-const request = ({ path, method, body, query }) => {
+const request = ({ apiPath, method, body, query }) => {
   return rp({
-    url: `${API_HOST}/${path}`,
+    url: path.join(API_HOST, apiPath),
     method,
     body,
     qs: query,
@@ -20,17 +22,17 @@ const request = ({ path, method, body, query }) => {
   });
 };
 
-export const get = ({ path, query }) => {
+export const get = ({ apiPath, query }) => {
   return request({
-    path,
+    apiPath,
     method: 'GET',
     query,
   }).then(getValidResponse);
 };
 
-export const post = ({ path, query, body }) => {
+export const post = ({ apiPath, query, body }) => {
   return request({
-    path,
+    apiPath,
     method: 'POST',
     body,
     query,
