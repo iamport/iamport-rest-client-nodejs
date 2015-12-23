@@ -8,3 +8,5 @@ node_modules
 
 # JetBrains IDE configuration files
 .idea
+
+dist
