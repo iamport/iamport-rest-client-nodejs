@@ -27,6 +27,7 @@
   "homepage": "http://iamport.kr/",
   "dependencies": {
     "request-promise": "^1.0.2",
+    "request":"^2.68.0",
     "bluebird": "^2.9.6",
     "qs": "^2.4.1",
     "lodash": "^3.1.0"
