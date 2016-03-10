@@ -1,6 +1,6 @@
 {
   "name": "iamport",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "REST API client for I'amport;",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,26 @@
   },
   "keywords": [
     "iamport",
-    "rest"
+    "rest",
+    "sdk",
+    "iamport-node-sdk"
   ],
   "author": {
     "email": "saystone@gmail.com",
     "name": "Seungjae Lee",
     "url": "https://github.com/saystone/"
   },
-  "contributors": [],
+  "contributors": [{
+      "email": "saystone@gmail.com",
+      "name": "Seungjae Lee",
+      "url":"https://github.com/saystone/"
+    },
+    {
+      "email": "seungjeal@naver.com",
+      "name": "Seungjae Lee",
+      "url": "https://github.com/a0ly" 
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iamport/iamport-rest-client-nodejs/issues"
