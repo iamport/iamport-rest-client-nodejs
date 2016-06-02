@@ -4,14 +4,10 @@
 아임포트의 자세한 내용은 [여기](http://iamport.kr/)를 참고하시기 바랍니다.
 
 ## Features
-- 인증 토큰 반환
-- 결제 정보 반환
-- 결제 취소
 - 모든 함수는 [Promise](http://www.html5rocks.com/ko/tutorials/es6/promises/)를 반환
 
 ## Requirements
 - [nodejs](https://github.com/nodejs/node) >= 0.12.x
-- [request-promise](https://github.com/request/request-promise) >= 1.0.x
 
 ## Installation
 ```
@@ -19,37 +15,64 @@ $ npm install git+https://git@github.com/iamport/iamport-rest-client-nodejs.git
 ```
 
 ## Usage
-```
+```javascript
 var Iamport = require('iamport');
 var iamport = new Iamport({
   impKey: 'your API key',
   impSecret: 'your API Secret key'
 });
 
-// 결제 정보 반환
-iamport.getPaymentByImpUid('impUid-for-info')
-  .then(function(response){
-    console.log(response);
-  }).catch(function(error){
-    console.log(error);
-  });
+// 아임포트 고유 아이디로 결제 정보를 조회
+iamport.payment.getByImpUid({
+  imp_uid: 'your imp_uid'  
+}).then(function(result){
+  console.log(result);
+}).catch(function(error){
+  console.log(error);
+});
 
-// 결제 취소
-iamport.cancelPayment('impUid-for-cancel')
-  .then(function(response){
-    console.log(response);
-  }).catch(function(error){
-    console.log(error);
-  });
+// 상점 고유 아이디로 결제 정보를 조회
+iamport.payment.getByMerchant({
+  merchant_uid: 'your merchant_uid'  
+}).then(function(result){
+  console.log(result);
+}).catch(function(error){
+  console.log(error);
+});
+
+// 상태별 결제 정보 조회
+iamport.payment.getByStatus({
+  payment_status: 'your payment_status'  
+}).then(function(result){
+  console.log(result);
+}).catch(function(error){
+  console.log(error);
+});
+
 ```
+
+## Available resources & methods
+*Where you see `params` it is a plain JavaScript object`*
+* Payment
+ * [`getByImpUid(params)`](https://api.iamport.kr/#!/payments/getPaymentByImpUid)
+ * [`getByMerchant(params)`](https://api.iamport.kr/#!/payments/getPaymentByMerchantUid)
+ * [`getByStatus(params)`](https://api.iamport.kr/#!/payments/getPaymentsByStatus)
+ * [`cancel(params)`](https://api.iamport.kr/#!/payments/cancelPayment)
+ * [`prepare(params)`](https://api.iamport.kr/#!/payments.validation/preparePayment)
+ * [`getPrepare(params)`](https://api.iamport.kr/#!/payments.validation/getPaymentPrepareByMerchantUid)
+* Subscribe
+ * [`onetime(params)`](https://api.iamport.kr/#!/subscribe/onetime)
+ * [`again(params)`](https://api.iamport.kr/#!/subscribe/again)
+ * [`schedule(params)`](https://api.iamport.kr/#!/subscribe/schedule)
+ * [`unschedule(params)`](https://api.iamport.kr/#!/subscribe/unschedule)
+ * [`getCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_view)
+ * [`createCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_save)
+ * [`deleteCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_delete)
 
 ## Todo
 - 테스트 코드(...)
 - publish to NPM
-- 파라미터 검증
 - 결제 취소의 다양한 케이스 대응
-- merchantUid로 결제 정보 조회 구현
-- 한번에 여러 결제 정보 반환 구현
 
 ## Contribution
 - 이 프로젝트는 누구나 참여 가능합니다.
