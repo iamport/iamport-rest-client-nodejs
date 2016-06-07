@@ -1,10 +1,10 @@
 {
   "name": "iamport",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "REST API client for I'amport;",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,15 +21,16 @@
     "name": "Seungjae Lee",
     "url": "https://github.com/saystone/"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "email": "saystone@gmail.com",
       "name": "Seungjae Lee",
-      "url":"https://github.com/saystone/"
+      "url": "https://github.com/saystone/"
     },
     {
       "email": "seungjeal@naver.com",
       "name": "Seungjae Lee",
-      "url": "https://github.com/a0ly" 
+      "url": "https://github.com/a0ly"
     }
   ],
   "license": "MIT",
@@ -39,9 +40,13 @@
   "homepage": "http://iamport.kr/",
   "dependencies": {
     "request-promise": "^1.0.2",
-    "request":"^2.68.0",
+    "request": "^2.68.0",
     "bluebird": "^2.9.6",
     "qs": "^2.4.1",
     "lodash": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   }
 }

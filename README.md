@@ -11,7 +11,7 @@
 
 ## Installation
 ```
-$ npm install git+https://git@github.com/iamport/iamport-rest-client-nodejs.git
+$ npm install iamport
 ```
 
 ## Usage
@@ -69,14 +69,9 @@ iamport.payment.getByStatus({
  * [`createCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_save)
  * [`deleteCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_delete)
 
-## Todo
-- 테스트 코드(...)
-- publish to NPM
-- 결제 취소의 다양한 케이스 대응
-
 ## Contribution
 - 이 프로젝트는 누구나 참여 가능합니다.
-- 버그나 개선점 및 의견 등은 [이슈](https://github.com/iamport/iamport-rest-client-nodejs/issues) 및 [Pull Request](https://github.com/iamport/iamport-rest-client-nodejs/compare)를 활용해주세요. 
+- 버그나 개선점 및 의견 등은 [이슈](https://github.com/iamport/iamport-rest-client-nodejs/issues) 및 [Pull Request](https://github.com/iamport/iamport-rest-client-nodejs/compare)를 활용해주세요.
 
 ## Conventions
 - [ES5](https://github.com/airbnb/javascript/tree/master/es5)
@@ -89,4 +84,3 @@ iamport.payment.getByStatus({
 
 ## License
 - [MIT](https://github.com/iamport/iamport-rest-client-nodejs/blob/master/LICENSE)
-
