@@ -1,4 +1,8 @@
 # Iamport
+[![Build Status](https://travis-ci.org/iamport/iamport-rest-client-nodejs.svg?branch=master)](https://travis-ci.org/iamport/iamport-rest-client-nodejs)
+[![npm version](https://badge.fury.io/js/iamport.svg)](https://badge.fury.io/js/iamport)
+[![Dependency Status](https://david-dm.org/iamport/iamport-rest-client-nodejs.svg)](https://david-dm.org/iamport/iamport-rest-client-nodejs)
+
 아임포트는 특정 서비스와 국내 PG사와의 연동을 간편하게 연결해주는 서비스입니다.
 이 모듈은 아임포트에서 제공하는 REST API를 [Node.js®](https://nodejs.org/)로 구현한 클라이언트입니다.
 아임포트의 자세한 내용은 [여기](http://iamport.kr/)를 참고하시기 바랍니다.
