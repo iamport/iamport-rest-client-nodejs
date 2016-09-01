@@ -1,6 +1,6 @@
 {
   "name": "iamport",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "REST API client for I'amport;",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
   },
   "homepage": "http://iamport.kr/",
   "dependencies": {
-    "request-promise": "^3.0.0",
+    "request-promise": "^4.1.1",
     "request": "^2.68.0",
     "bluebird": "^3.4.1",
     "qs": "^6.2.0",
@@ -47,6 +47,6 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^3.0.2"
   }
 }
