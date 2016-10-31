@@ -39,11 +39,8 @@
   },
   "homepage": "http://iamport.kr/",
   "dependencies": {
-    "request-promise": "^4.1.1",
     "request": "^2.68.0",
-    "bluebird": "^3.4.1",
-    "qs": "^6.2.0",
-    "lodash": "^4.13.1"
+    "bluebird": "^3.4.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
