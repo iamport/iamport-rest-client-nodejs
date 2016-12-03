@@ -6,7 +6,7 @@ var iamport = new require('../../lib/iamport')()
 
 describe('subscribe.createCustomers', function(){
   it('create customer param check', function(done){
-    iamport.subscribe.createCustomers()
+    iamport.subscribe_customer.createCustomers()
     .then(function(result){
       expect(result).to.be.empty;
       done();
