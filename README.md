@@ -49,6 +49,9 @@ iamport.payment.getByStatus({
 
 ## Available resources & methods
 *Where you see `params` it is a plain JavaScript object*
+- certification
+ * [`get(params)`](https://api.iamport.kr/#!/certifications/getCertification)
+ * [`delete(params)`](https://api.iamport.kr/#!/certifications/deleteCertification)
 - payment
  * [`getByImpUid(params)`](https://api.iamport.kr/#!/payments/getPaymentByImpUid)
  * [`getByMerchant(params)`](https://api.iamport.kr/#!/payments/getPaymentByMerchantUid)
@@ -57,14 +60,16 @@ iamport.payment.getByStatus({
  * [`prepare(params)`](https://api.iamport.kr/#!/payments.validation/preparePayment)
  * [`getPrepare(params)`](https://api.iamport.kr/#!/payments.validation/getPaymentPrepareByMerchantUid)
 - subscribe
- * [`onetime(params)`](https://api.iamport.kr/#!/subscribe/onetime)
- * [`again(params)`](https://api.iamport.kr/#!/subscribe/again)
- * [`schedule(params)`](https://api.iamport.kr/#!/subscribe/schedule)
- * [`unschedule(params)`](https://api.iamport.kr/#!/subscribe/unschedule)
+ * [`onetime(params)`](https://api.iamport.kr/#!/subscribe/payments/onetime)
+ * [`again(params)`](https://api.iamport.kr/#!/subscribe/payments/again)
+ * [`schedule(params)`](https://api.iamport.kr/#!/subscribe/payments/schedule)
+ * [`unschedule(params)`](https://api.iamport.kr/#!/subscribe/payments/unschedule)
 - subscribe_customer
- * [`getCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_view)
- * [`createCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_save)
- * [`deleteCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_delete)
+ * [`get(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_view)
+ * [`create(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_save)
+ * [`delete(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_delete)
+- vbank
+ * [`create(params)`](https://api.iamport.kr/#!/vbanks)
 
 ## Contribution
 - 이 프로젝트는 누구나 참여 가능합니다.

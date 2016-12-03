@@ -4,9 +4,9 @@
 var iamport = new require('../../lib/iamport')()
 ,   expect = require('chai').expect;
 
-describe('subscribe.createCustomers', function(){
+describe('subscribe_customer.create', function(){
   it('create customer param check', function(done){
-    iamport.subscribe_customer.createCustomers()
+    iamport.subscribe_customer.create()
     .then(function(result){
       expect(result).to.be.empty;
       done();
