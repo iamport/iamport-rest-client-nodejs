@@ -15,7 +15,7 @@
 
 ## Installation
 ```
-$ npm install iamport
+$ npm install --save iamport
 ```
 
 ## Usage
@@ -30,45 +30,38 @@ var iamport = new Iamport({
 iamport.payment.getByImpUid({
   imp_uid: 'your imp_uid'  
 }).then(function(result){
-  console.log(result);
+  // To do
 }).catch(function(error){
-  console.log(error);
+  // handle error
 });
 
 // 상점 고유 아이디로 결제 정보를 조회
 iamport.payment.getByMerchant({
   merchant_uid: 'your merchant_uid'  
-}).then(function(result){
-  console.log(result);
-}).catch(function(error){
-  console.log(error);
-});
+})
 
 // 상태별 결제 정보 조회
 iamport.payment.getByStatus({
   payment_status: 'your payment_status'  
-}).then(function(result){
-  console.log(result);
-}).catch(function(error){
-  console.log(error);
-});
+})
 
 ```
 
 ## Available resources & methods
-*Where you see `params` it is a plain JavaScript object`*
-* Payment
+*Where you see `params` it is a plain JavaScript object*
+- payment
  * [`getByImpUid(params)`](https://api.iamport.kr/#!/payments/getPaymentByImpUid)
  * [`getByMerchant(params)`](https://api.iamport.kr/#!/payments/getPaymentByMerchantUid)
  * [`getByStatus(params)`](https://api.iamport.kr/#!/payments/getPaymentsByStatus)
  * [`cancel(params)`](https://api.iamport.kr/#!/payments/cancelPayment)
  * [`prepare(params)`](https://api.iamport.kr/#!/payments.validation/preparePayment)
  * [`getPrepare(params)`](https://api.iamport.kr/#!/payments.validation/getPaymentPrepareByMerchantUid)
-* Subscribe
+- subscribe
  * [`onetime(params)`](https://api.iamport.kr/#!/subscribe/onetime)
  * [`again(params)`](https://api.iamport.kr/#!/subscribe/again)
  * [`schedule(params)`](https://api.iamport.kr/#!/subscribe/schedule)
  * [`unschedule(params)`](https://api.iamport.kr/#!/subscribe/unschedule)
+- subscribe_customer
  * [`getCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_view)
  * [`createCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_save)
  * [`deleteCustomers(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_delete)
