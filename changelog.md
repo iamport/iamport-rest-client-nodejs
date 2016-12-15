@@ -1,4 +1,12 @@
 
+# 0.3.0 #
+- [ADD] certification.get(Object)
+- [ADD] certification.delete(Object)
+- [ADD] vbank.create(Object)
+- [MODIFY] subscribe.getCustomers(Object) -> subscribe_customer.get(Object)
+- [MODIFY] subscribe.createCustomers(Object) -> subscribe_customer.create(Object)
+- [MODIFY] subscribe.deleteCustomers(Object) -> subscribe_customer.delete(Object)
+
 # 0.2.0 #
 - refactored Iamport-sdk for resource extension mechanism
 - Token caching
@@ -23,6 +31,6 @@
 - first version
 - Set code convention
 - Iamport constructor design
-- [ADD] getPaymentByImpUid(), 
-- [ADD] cancelPayment(), 
+- [ADD] getPaymentByImpUid(),
+- [ADD] cancelPayment(),
 - [ADD] getToken()
