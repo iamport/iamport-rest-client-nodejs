@@ -160,6 +160,19 @@ interface IamportCertification {
     origin?: string
 }
 
+interface EscrowsLogisSenderAndReceiver {
+    name: string,
+    tel: string,
+    addr: string,
+    postcode: string,
+}
+
+interface EscrowLogis {
+    company: string,
+    invoice: string,
+    sent_at: number,
+}
+
 class Payments {
     getByImpUid(params:{imp_uid: string[]}): Promise<IamportResponse<IamportPayment[]>>
 
@@ -337,12 +350,21 @@ class Vbank {
     }): Promise<IamportResponse<IamportPayment>>
 }
 
+class Escrows {
+    create(params:{
+        sender: EscrowsLogisSenderAndReceiver
+        receiver: EscrowsLogisSenderAndReceiver
+        logis: EscrowLogis
+    }): Promise<IamportResponse<IamportPayment>>
+}
+
 class Iamport {
     readonly payment: Payments;
     readonly subscribe: Subscribe;
     readonly subscribe_customer: SubscribeCustomer;
     readonly certification: Certifications;
     readonly vbank: Vbank;
+    readonly escrows: Escrows;
     constructor(options?: {
         impKey: string
         impSecret: string
