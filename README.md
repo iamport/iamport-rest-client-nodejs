@@ -70,6 +70,9 @@ iamport.payment.getByStatus({
  * [`delete(params)`](https://api.iamport.kr/#!/subscribe.customer/customer_delete)
 - vbank
  * [`create(params)`](https://api.iamport.kr/#!/vbanks)
+ * [`getHolder(params)`](https://api.iamport.kr/#!/vbanks/queryBankHolder)
+ - escrows
+ * [`create(params)`](https://api.iamport.kr/#!/escrow.logis/escrow_logis_save)
 
 ## Contribution
 - 이 프로젝트는 누구나 참여 가능합니다.
