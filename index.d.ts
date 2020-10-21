@@ -6,6 +6,52 @@ interface IamportResponse<T = any> {
 }
 
 type iamportStatus = 'ready' | 'paid' | 'failed' | 'cancelled';
+type vbankCode =
+    '004' | // KB국민은행	
+    '023' | // SC제일은행	
+    '039' | // 경남은행	
+    '034' | // 광주은행	
+    '003' | // 기업은행	
+    '011' | // 농협	
+    '031' | // 대구은행	
+    '032' | // 부산은행	
+    '002' | // 산업은행	
+    '007' | // 수협	
+    '088' | // 신한은행	
+    '048' | // 신협	
+    '005' | // 외환은행	
+    '020' | // 우리은행	
+    '071' | // 우체국	
+    '037' | // 전북은행	
+    '035' | // 제주은행	
+    '012' | // 축협	
+    '081' | // 하나은행(서울은행)	
+    '027' | // 한국씨티은행(한미은행)	
+    '089' | // K뱅크	
+    '090' | // 카카오뱅크	
+    '209' | // 유안타증권	
+    '218' | // 현대증권	
+    '230' | // 미래에셋증권	
+    '238' | // 대우증권	
+    '240' | // 삼성증권	
+    '243' | // 한국투자증권	
+    '247' | // 우리투자증권	
+    '261' | // 교보증권	
+    '262' | // 하이투자증권	
+    '263' | // 에이치엠씨투자증권	
+    '264' | // 키움증권	
+    '265' | // 이트레이드증권	
+    '266' | // 에스케이증권	
+    '267' | // 대신증권	
+    '268' | // 솔로몬투자증권	
+    '269' | // 한화증권	
+    '270' | // 하나대투증권	
+    '278' | // 굿모닝신한증권	
+    '279' | // 동부증권	
+    '280' | // 유진투자증권	
+    '287' | // 메리츠증권	
+    '289' | // 엔에이치투자증권	
+    '290'; // 부국증권	
 
 interface IamportPayment {
     imp_uid: string
@@ -114,6 +160,19 @@ interface IamportCertification {
     origin?: string
 }
 
+interface EscrowsLogisSenderAndReceiver {
+    name: string,
+    tel: string,
+    addr: string,
+    postcode: string,
+}
+
+interface EscrowLogis {
+    company: string,
+    invoice: string,
+    sent_at: number,
+}
+
 class Payments {
     getByImpUid(params:{imp_uid: string[]}): Promise<IamportResponse<IamportPayment[]>>
 
@@ -183,6 +242,7 @@ class Subscribe {
         buyer_addr?: string
         buyer_postcode?: string
         card_quota?: number
+        interest_free_by_merchant?: boolean
         custom_data?: string
         notice_url?: string
     }): Promise<IamportResponse<IamportPayment>>
@@ -199,6 +259,7 @@ class Subscribe {
         buyer_addr?: string
         buyer_postcode?: string
         card_quota?: number
+        interest_free_by_merchant?: boolean
         custom_data?: string
         notice_url?: string
     }): Promise<IamportResponse<IamportPayment>>
@@ -282,6 +343,19 @@ class Vbank {
         notice_url?: string[]
         custom_data?: string
     }): Promise<IamportResponse<IamportPayment>>
+
+    getHolder(params: {
+        bank_code: vbankCode,
+        bank_num: string,
+    }): Promise<IamportResponse<IamportPayment>>
+}
+
+class Escrows {
+    create(params:{
+        sender: EscrowsLogisSenderAndReceiver
+        receiver: EscrowsLogisSenderAndReceiver
+        logis: EscrowLogis
+    }): Promise<IamportResponse<IamportPayment>>
 }
 
 class Iamport {
@@ -290,6 +364,7 @@ class Iamport {
     readonly subscribe_customer: SubscribeCustomer;
     readonly certification: Certifications;
     readonly vbank: Vbank;
+    readonly escrows: Escrows;
     constructor(options?: {
         impKey: string
         impSecret: string
