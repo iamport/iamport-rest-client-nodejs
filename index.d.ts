@@ -229,6 +229,7 @@ class Subscribe {
         buyer_addr?: string
         buyer_postcode?: string
         card_quota?: number
+        interest_free_by_merchant?: boolean
         custom_data?: string
         notice_url?: string
     }): Promise<IamportResponse<IamportPayment>>
@@ -245,6 +246,7 @@ class Subscribe {
         buyer_addr?: string
         buyer_postcode?: string
         card_quota?: number
+        interest_free_by_merchant?: boolean
         custom_data?: string
         notice_url?: string
     }): Promise<IamportResponse<IamportPayment>>
