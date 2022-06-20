@@ -4,9 +4,9 @@
 [![Dependency Status](https://david-dm.org/iamport/iamport-rest-client-nodejs.svg)](https://david-dm.org/iamport/iamport-rest-client-nodejs)
 
 아임포트는 특정 서비스와 국내 PG사와의 연동을 간편하게 연결해주는 서비스입니다.
-이 모듈은 아임포트에서 제공하는 REST API를 [Node.js®](https://nodejs.org/)로 구현한 샘플프로그램입니다.
-일부 또는 최신 REST-API는 해당 프로그램에 구현되어 있지 않으므로 참조용으로만 쓰는 것을 권장합니다.
-아임포트의 자세한 내용은 [여기](http://iamport.kr/)를 참고하시기 바랍니다.
+- 이 모듈은 아임포트에서 제공하는 REST API를 [Node.js®](https://nodejs.org/)로 구현한 샘플프로그램입니다.
+- 일부 또는 최신 REST-API는 해당 프로그램에 구현되어 있지 않으므로 참조용으로만 쓰는 것을 권장합니다.
+- 아임포트의 자세한 내용은 [여기](http://iamport.kr/)를 참고하시기 바랍니다.
 
 ## Features
 - 모든 함수는 [Promise](http://www.html5rocks.com/ko/tutorials/es6/promises/)를 반환
