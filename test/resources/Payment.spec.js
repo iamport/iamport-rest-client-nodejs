@@ -84,3 +84,63 @@ describe('payment.getByStatus', function() {
     });
   });
 });
+
+describe('payment.getBalance', function() {
+  it('Should return error when imp_uid is missing', function(done){
+    iamport.payment.getBalance()
+    .then(function(result){
+      expect(result).to.be.empty;
+      done();
+    })
+    .catch(function(error){
+      expect(error.toString()).to.contain('Param missing');
+      done();
+    });
+  });
+});
+
+describe('payment.getByImpUids', function() {
+  it('Should be a function', function(){
+    expect(iamport.payment.getByImpUids).to.be.a('function');
+  });
+});
+
+describe('payment.getAllByMerchant', function() {
+  it('Should return error when merchant_uid is missing', function(done){
+    iamport.payment.getAllByMerchant()
+    .then(function(result){
+      expect(result).to.be.empty;
+      done();
+    })
+    .catch(function(error){
+      expect(error.toString()).to.contain('Param missing');
+      done();
+    });
+  });
+});
+
+describe('payment.updatePrepare', function() {
+  it('Should return error when merchant_uid is missing', function(done){
+    iamport.payment.updatePrepare()
+    .then(function(result){
+      expect(result).to.be.empty;
+      done();
+    })
+    .catch(function(error){
+      expect(error.toString()).to.contain('Param missing');
+      done();
+    });
+  });
+
+  it('Should return error when amount is missing', function(done){
+    iamport.payment.updatePrepare({merchant_uid: 'test_merchant_uid'})
+    .then(function(result){
+      expect(result).to.be.empty;
+      done();
+    })
+    .catch(function(error){
+      expect(error.toString()).to.contain('Param missing');
+      done();
+    });
+  });
+});
